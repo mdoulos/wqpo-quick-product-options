@@ -1,0 +1,570 @@
+/* --------------------------------------------- */
+/* WooCommerce Quick Product Options FrontEnd --------------------------------------------------------------------------------- */
+/* --------------------------------------------- */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.wqpo-hidden {
+    display: none !important;
+}
+
+.wqpo-option {
+    margin-bottom: 10px;
+    padding: 15px 12px 15px 12px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wqpo-option legend {
+    font-weight: 600;
+    padding: 0 0.5rem;
+}
+
+.wqpo-option legend span {
+    font-size: 20px;
+}
+
+.wqpo-prefix {
+    padding-right: 5px;
+}
+
+.wqpo-option abbr.required {
+    color: red;
+    font-size: 16px;
+    position: relative;
+    top: -3px;
+}
+
+div.wqpo-number-option abbr.required {
+    left: -5px;
+}
+
+.wqpo-hideinputs input {
+    display: none;
+}
+
+.wqpo-choice {
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.wqpo-choice:has(input:checked) {
+    border: 2px solid #4c80ed;
+}
+
+.wqpo-choice label {
+    border: transparent solid 1px;
+}
+
+.wqpo-choice:hover label {
+    border: unset !important;
+}
+
+.wqpo-choice:has(input:checked) label {
+    border: unset !important;
+}
+
+.wqpo-choice:hover {
+    border: 2px solid #888;
+}
+
+.wqpo-skulabel {
+    margin-right: 4px;
+}
+
+.wqpo-choice label {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    text-indent: 0;
+    cursor: pointer;
+}
+
+.wqpo-choice input {
+    width: 20px;
+    height: 20px;
+    margin: auto 8px auto 10px;
+    cursor: pointer;
+}
+
+.wqpo-choice-text {
+    font-weight: 600;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: auto;
+    width: 100%;
+}
+
+.wqpo-choice-price {
+    padding-left: 10px;
+}
+
+.wqpo-select {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none;
+}
+
+.wqpo-choices:has(.wqpo-select) {
+    position: relative;
+}
+
+.wqpo-choices:has(.wqpo-select)::before,
+.wqpo-choices:has(.wqpo-select)::after {
+  --size: 0.3rem;
+  position: absolute;
+  content: "";
+  right: 1rem;
+  pointer-events: none;
+}
+
+.wqpo-choices:has(.wqpo-select)::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 40%;
+}
+
+.wqpo-choices:has(.wqpo-select)::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 55%;
+}
+
+div.wqpo-option{
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+div.wqpo-option label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+div.wqpo-option input {
+    width: 100%;
+    max-width: 100px;
+    padding: 10px !important;
+}
+
+.wqpo-option-single-description {
+    margin-top: 10px;
+}
+
+.wqpo-choice:has(input:checked) .wqpo-choice-price {
+    display: none;
+}
+
+.wqpo-option:has( .wqpo-option-price[data-price="0"] ) .wqpo-choice-price[data-price="0"] {
+    display: none;
+}
+
+.wqpo-product-page .wqpo-variation-price bdi, .wqpo-product-page .wqpo-simple-price bdi {
+    font-size: 1.5em;
+    color: #77a464;
+    font-weight: unset;
+}
+
+.wqpo-product-page .woocommerce-Price-amount {
+    font-size: 1.5rem;
+}
+
+.wqpo-product-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.wqpo-simple-price {
+    margin: 12px 0;
+}
+
+.wqpo-text-option .wqpo-option-text-container input {
+    max-width: unset !important;
+    padding-right: 60px !important;
+}
+
+.wqpo-option-text-container {
+    position: relative;
+}
+
+.wqpo-text-char-count {
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    font-size: 12px;
+    color: #AAA;
+}
+
+.wqpo-option textarea {
+    height: 150px;
+    min-width: 250px;
+    min-height: 100px;
+    max-width: 700px;
+    max-height: 500px;
+}
+
+.wqpo-choice-description {
+    margin: 0;
+    padding: 0 10px 10px 10px;
+    font-size: 12px;
+}
+
+.wqpo-checkbox-option .wqpo-choice, .wqpo-radio-option .wqpo-choice {
+    flex-direction: column;
+}
+
+.wqpo-checkbox-option .wqpo-choice .flex-row, .wqpo-radio-option .wqpo-choice .flex-row {
+    flex-direction: row-reverse;
+}
+
+.wqpo-small-format .wqpo-option {
+    padding: 0;
+    border: unset;
+    margin-bottom: 15px;
+}
+
+.wqpo-small-format .wqpo-option legend span {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+}
+
+.wqpo-small-format .wqpo-option legend {
+    padding: 0;
+    margin-bottom: 6px;
+}
+
+.wqpo-choice span {
+    font-size: 16px;
+}
+
+.wqpo-swatches-radio-option .wqpo-choices {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.wqpo-small-format .wqpo-swatches-radio-option .wqpo-choice label {
+    padding: 2px 10px;
+}
+
+.wqpo-swatches-checkbox-option .wqpo-choices {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.wqpo-small-format .wqpo-swatches-checkbox-option .wqpo-choice label {
+    padding: 2px 10px;
+}
+
+.wqpo-color-radio-option .wqpo-choices {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.wqpo-color-radio-option .wqpo-choice {
+    flex-grow: 1;
+}
+
+.wqpo-color-radio-option .wqpo-choice span {
+    margin-right: 15px;
+}
+
+.wqpo-color-block {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+    margin-left: auto;
+}
+
+.wqpo-noshow-text label {
+    padding: 3px;
+    margin: 0;
+}
+
+.wqpo-noshow-text .wqpo-color-block {
+    margin: auto;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+}
+
+.wqpo-noshow-text {
+    flex-grow: unset !important;
+}
+
+.wqpo-small-format .wqpo-color-radio-option .wqpo-choice {
+    flex-grow: unset;
+}
+
+.wqpo-small-format .wqpo-color-radio-option .wqpo-choices {
+    justify-content: unset;
+}
+
+.wqpo-small-format .wqpo-color-radio-option .wqpo-choice label {
+    padding: 2px 10px;
+}
+
+.wqpo-color-radio-option .wqpo-choices input {
+    display: none !important;
+}
+
+.wqpo-small-format .wqpo-color-radio-option .wqpo-choice label {
+    padding: 3px 6px !important;
+    display: flex;
+}
+
+.wqpo-small-format .wqpo-color-radio-option .wqpo-choice span {
+    margin-right: 10px;
+}
+
+.wqpo-small-format .wqpo-color-radio-option .wqpo-choice .wqpo-color-block {
+    width: 17px;
+    height: 17px;
+    border-radius: 2px;
+    margin: auto;
+}
+
+.wqpo-small-format .wqpo-color-radio-option .wqpo-noshow-text label {
+    padding: 1px 2px !important;
+    display: flex;
+}
+
+.wqpo-small-format .wqpo-color-radio-option .wqpo-noshow-text:has(input:checked) label {
+    padding: 2px 2px !important;
+}
+
+.wqpo-small-format .wqpo-color-radio-option .wqpo-noshow-text .wqpo-color-block {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+}
+
+.wqpo-color-radio-option .wqpo-choices:has(.wqpo-noshow-text) {
+    justify-content: unset;
+}
+
+.wqpo-order-0 {
+    order: 0;
+} .wqpo-order-1 {
+    order: 1;
+} .wqpo-order-2 {
+    order: 2;
+} .wqpo-order-3 {
+    order: 3;
+} .wqpo-order-4 {
+    order: 4;
+} .wqpo-order-5 {
+    order: 5;
+} .wqpo-order-6 {
+    order: 6;
+} .wqpo-order-7 {
+    order: 7;
+} .wqpo-order-8 {
+    order: 8;
+} .wqpo-order-9 {
+    order: 9;
+} .wqpo-order-10 {
+    order: 10;
+} .wqpo-order-11 {
+    order: 11;
+} .wqpo-order-12 {
+    order: 12;
+} .wqpo-order-13 {
+    order: 13;
+} .wqpo-order-14 {
+    order: 14;
+} .wqpo-order-15 {
+    order: 15;
+} .wqpo-order-16 {
+    order: 16;
+} .wqpo-order-17 {
+    order: 17;
+} .wqpo-order-18 {
+    order: 18;
+} .wqpo-order-19 {
+    order: 19;
+} .wqpo-order-20 {
+    order: 20;
+} .wqpo-order-21 {
+    order: 21;
+} .wqpo-order-22 {
+    order: 22;
+} .wqpo-order-23 {
+    order: 23;
+} .wqpo-order-24 {
+    order: 24;
+} .wqpo-order-25 {
+    order: 25;
+} .wqpo-order-26 {
+    order: 26;
+} .wqpo-order-27 {
+    order: 27;
+} .wqpo-order-28 {
+    order: 28;
+} .wqpo-order-29 {
+    order: 29;
+} .wqpo-order-30 {
+    order: 30;
+} .wqpo-order-31 {
+    order: 31;
+} .wqpo-order-32 {
+    order: 32;
+} .wqpo-order-33 {
+    order: 33;
+} .wqpo-order-34 {
+    order: 34;
+} .wqpo-order-35 {
+    order: 35;
+} .wqpo-order-36 {
+    order: 36;
+} .wqpo-order-37 {
+    order: 37;
+} .wqpo-order-38 {
+    order: 38;
+} .wqpo-order-39 {
+    order: 39;
+} .wqpo-order-40 {
+    order: 40;
+} .wqpo-order-41 {
+    order: 41;
+} .wqpo-order-42 {
+    order: 42;
+} .wqpo-order-43 {
+    order: 43;
+} .wqpo-order-44 {
+    order: 44;
+} .wqpo-order-45 {
+    order: 45;
+} .wqpo-order-46 {
+    order: 46;
+} .wqpo-order-47 {
+    order: 47;
+} .wqpo-order-48 {
+    order: 48;
+} .wqpo-order-49 {
+    order: 49;
+} .wqpo-order-50 {
+    order: 50;
+} .wqpo-order-51 {
+    order: 51;
+} .wqpo-order-52 {
+    order: 52;
+} .wqpo-order-53 {
+    order: 53;
+} .wqpo-order-54 {
+    order: 54;
+} .wqpo-order-55 {
+    order: 55;
+} .wqpo-order-56 {
+    order: 56;
+} .wqpo-order-57 {
+    order: 57;
+} .wqpo-order-58 {
+    order: 58;
+} .wqpo-order-59 {
+    order: 59;
+} .wqpo-order-60 {
+    order: 60;
+} .wqpo-order-61 {
+    order: 61;
+} .wqpo-order-62 {
+    order: 62;
+} .wqpo-order-63 {
+    order: 63;
+} .wqpo-order-64 {
+    order: 64;
+} .wqpo-order-65 {
+    order: 65;
+} .wqpo-order-66 {
+    order: 66;
+} .wqpo-order-67 {
+    order: 67;
+} .wqpo-order-68 {
+    order: 68;
+} .wqpo-order-69 {
+    order: 69;
+} .wqpo-order-70 {
+    order: 70;
+} .wqpo-order-71 {
+    order: 71;
+} .wqpo-order-72 {
+    order: 72;
+} .wqpo-order-73 {
+    order: 73;
+} .wqpo-order-74 {
+    order: 74;
+} .wqpo-order-75 {
+    order: 75;
+} .wqpo-order-76 {
+    order: 76;
+} .wqpo-order-77 {
+    order: 77;
+} .wqpo-order-78 {
+    order: 78;
+} .wqpo-order-79 {
+    order: 79;
+} .wqpo-order-80 {
+    order: 80;
+} .wqpo-order-81 {
+    order: 81;
+} .wqpo-order-82 {
+    order: 82;
+} .wqpo-order-83 {
+    order: 83;
+} .wqpo-order-84 {
+    order: 84;
+} .wqpo-order-85 {
+    order: 85;
+} .wqpo-order-86 {
+    order: 86;
+} .wqpo-order-87 {
+    order: 87;
+} .wqpo-order-88 {
+    order: 88;
+} .wqpo-order-89 {
+    order: 89;
+} .wqpo-order-90 {
+    order: 90;
+} .wqpo-order-91 {
+    order: 91;
+} .wqpo-order-92 {
+    order: 92;
+} .wqpo-order-93 {
+    order: 93;
+} .wqpo-order-94 {
+    order: 94;
+} .wqpo-order-95 {
+    order: 95;
+} .wqpo-order-96 {
+    order: 96;
+} .wqpo-order-97 {
+    order: 97;
+} .wqpo-order-98 {
+    order: 98;
+} .wqpo-order-99 {
+    order: 99;
+}
+

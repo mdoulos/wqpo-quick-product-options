@@ -1,0 +1,563 @@
+/* --------------------------------------------- */
+/* WooCommerce Quick Product Options Admin --------------------------------------------------------------------------------- */
+/* --------------------------------------------- */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.wqpo-hidden {
+    display: none !important;
+}
+
+/* Make the element bounce up */
+.wqpo-admin-flash {
+    transform: scale(1.05);
+    rotate: 2deg;
+    color: #bc812d;
+    position: relative;
+    top: -2px;
+}
+
+#wqpo_admin_tab {
+    width: 80%;
+    margin-left: auto;
+}
+
+.wqpo-admin-tab-content {
+    padding: 10px;
+}
+
+.wqpo_admin_options_group {
+    margin-bottom: 20px;
+}
+
+.wqpo-admin-option, .wqpo-admin-modifier {
+    background: #F7F7F7;
+    padding: 10px 0 15px 0;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    box-shadow: 1px 3px 5px #BBB;
+}
+
+.wqpo-admin-option-inner, .wqpo-admin-modifier-inner {
+    padding: 0 10px;
+}
+
+.wqpo-admin-field {
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+}
+
+.wqpo-admin-option label, .wqpo-admin-modifier label {
+    float: none;
+    margin: 0 0 8px 1px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.wqpo-admin-oname {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+.wqpo-admin-oclass {
+    width: 120px;
+}
+
+.wqpo-admin-oprefix {
+    width: 82px;
+}
+
+.wqpo-admin-osuffix {
+    width: 50px;
+}
+
+.wqpo-admin-otype select {
+    width: 145px;
+}
+
+.wqpo-admin-osort {
+    width: 45px;
+}
+
+.wqpo-admin-field input[type="checkbox"] {
+    margin: auto;
+}
+
+.wqpo-admin-field:has(input[type='checkbox']) label {
+    font-size: 12px;
+    position: relative;
+    top: 7px;
+}
+
+.wqpo-admin-oremove {
+    margin-top: 7px;
+}
+
+.wqpo-admin-oremove button, .wqpo-admin-cremove button, .wqpo-admin-mremove button {
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: 0px;
+    margin-left: 7px;
+    padding: 5px 10px 6px 10px;
+    border-radius: 4px;
+    border: solid #b12222 1px;
+    color: #b12222;
+    background-color: #f6f7f7;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.wqpo-admin-oremove button:hover, .wqpo-admin-cremove button:hover {
+    background-color: #f6f1f1;
+    border: solid #951414 1px;
+}
+
+.wqpo-admin-cremove {
+    margin: 26px 0 auto auto;
+}
+
+.wqpo-admin-onumber {
+    margin: -3px 0 0 auto;
+    font-size: 16px;
+    font-weight: 700;
+    position: relative;
+    top: 2px;
+    padding-right: 7px;
+    min-width: 85px;
+    text-align: right;
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+    transform: scale(1);
+}
+
+.wqpo-admin-choices {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #999;
+}
+
+.wqpo-admin-choice .flex-row {
+    margin-bottom: 10px;
+}
+
+.wqpo-admin-choice .flex-row .wqpo-admin-field:last-of-type {
+    margin-right: 0 !important;
+}
+
+.wqpo-admin-sharedinputs {
+    padding-right: 10px;
+}
+
+.wqpo-admin-cname {
+    width: 100%;
+    min-width: 100px;
+}
+
+.wqpo-admin-cprice {
+    width: 65px;
+    min-width: 65px;
+}
+
+.wqpo-admin-cimage {
+    width: 65px;
+    min-width: 65px;
+}
+
+.wqpo-admin-ctag {
+    width: 75px;
+    min-width: 75px;
+}
+
+.wqpo-admin-cshowtag {
+    width: 80px;
+    min-width: 80px;
+}
+
+.wqpo-admin-chidetag {
+    width: 80px;
+    min-width: 80px;
+}
+
+.wqpo-admin-numberinputs .wqpo-admin-field {
+    width: 65px;
+}
+
+.wqpo-admin-csort {
+    width: 50px;
+    min-width: 50px;
+}
+
+.wqpo-admin-csku {
+    border-left: #BBB solid 1px;
+    padding-left: 11px;
+    min-width: 85px;
+    width: 85px;
+}
+
+.wqpo-admin-numberinputs {
+    display: none !important;
+    margin-bottom: 0 !important;
+    border-left: #BBB solid 1px;
+    padding-left: 11px;
+}
+
+.wqpo-admin-colorinputs {
+    display: none !important;
+    margin-bottom: 0 !important;
+    border-left: #BBB solid 1px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.wqpo-admin-cdescription {
+    width: 100%;
+}
+
+.wqpo-admin-choice {
+    border-bottom: #BBB solid 1px;
+    margin-bottom: 20px;
+    padding: 10px !important;
+}
+
+.wqpo-admin-choice:nth-of-type(even) {
+    background: #EEE;
+}
+
+.wqpo-admin-choice:first-of-type {
+    margin: 0;
+    padding-top: 0 !important;
+}
+
+.wqpo-admin-choice:first-of-type .flex-row {
+    margin: 0;
+}
+
+.wqpo-admin-choice:not(:first-of-type) {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.wqpo-admin-choice:not(:first-of-type) .flex-row {
+    margin: 0;
+}
+
+.wqpo-admin-choice:not(:first-of-type) label {
+    display: none;
+}
+
+.wqpo-admin-choice:not(:first-of-type) .wqpo-admin-cremove {
+    margin-top: 0;
+}
+
+.wqpo-admin-choice:first-of-type .wqpo-admin-crowdesc, .wqpo-admin-choice:not(:first-of-type) .wqpo-admin-crowdesc input {
+    margin-top: 10px;
+}
+
+.wqpo-admin-crowdesc {
+    display: none !important;
+}
+
+.wqpo-admin-cdescription input {
+    width: 100%;
+}
+
+.wqpo-admin-cdescription label {
+    display: none;
+    margin: auto 10px auto 0 !important;
+}
+
+.wqpo-add-choice {
+    margin: 20px 0 0 10px !important;
+    max-width: 150px;
+}
+
+.wqpo-admin-option-text .wqpo-admin-csort, .wqpo-admin-option-textarea .wqpo-admin-csort {
+    margin: 0;
+}
+
+.wqpo-admin-option-text .wqpo-admin-choice, .wqpo-admin-option-textarea .wqpo-admin-choice, .wqpo-admin-option-number .wqpo-admin-choice {
+    border-bottom: 0;
+    padding-bottom: 3px !important;
+}
+
+.wqpo-admin-sshowsettings {
+    margin-left: 20px;
+    flex-direction: row-reverse;
+}
+
+.wqpo-admin-sshowsettings label {
+    top: -1px !important;
+    margin: auto 0 auto 7px;
+    font-weight: 600;
+}
+
+.wqpo-admin-settings {
+    display: none !important;
+    margin-bottom: 20px;
+}
+
+.wqpo-admin-stype {
+    margin-left: 7px;
+    width: 120px;
+}
+
+.wqpo-admin-sskulabelsuffix input {
+    width: 100px;
+}
+
+.wqpo-admin-sskusuffix input {
+    width: 80px;
+}
+
+.wqpo-admin-sitemizeprefix input, .wqpo-admin-sitemizesuffix input {
+    width: 110px;
+}
+
+.wqpo-admin-sskulabel input {
+    width: 100px;
+}
+
+.wqpo-admin-oselectfirst {
+    display: none;
+}
+
+.wqpo-admin-checkbox-option .wqpo-admin-orequired {
+    display: none;
+}
+
+.wqpo-admin-opriceperchar, .wqpo-admin-oshowinput, .wqpo-admin-omaxlength, .wqpo-admin-oflatrate, .wqpo-admin-oshowtext {
+    display: none;
+}
+
+.wqpo-admin-option-number .wqpo-admin-numberinputs {
+    display: flex !important;
+}
+
+.wqpo-admin-option-number .wqpo-admin-choiceinputs, .wqpo-admin-option-text .wqpo-admin-choiceinputs, .wqpo-admin-option-textarea .wqpo-admin-choiceinputs {
+    display: none;
+}
+
+.wqpo-admin-option-number .wqpo-add-choice, .wqpo-admin-option-text .wqpo-add-choice, .wqpo-admin-option-textarea .wqpo-add-choice {
+    display: none;
+}
+
+.wqpo-admin-option-number .wqpo-admin-csort, .wqpo-admin-option-text .wqpo-admin-csort, .wqpo-admin-option-textarea .wqpo-admin-csort {
+    display: none;
+}
+
+.wqpo-admin-option-number .wqpo-admin-choice:not(:first-of-type), .wqpo-admin-option-text .wqpo-admin-choice:not(:first-of-type), .wqpo-admin-option-textarea .wqpo-admin-choice:not(:first-of-type) {
+    display: none;
+}
+
+.wqpo-admin-option-number .wqpo-admin-cremove, .wqpo-admin-option-text .wqpo-admin-cremove, .wqpo-admin-option-textarea .wqpo-admin-cremove {
+    display: none;
+}
+
+.wqpo-admin-option-swatches-checkbox .wqpo-admin-ousedescription, .wqpo-admin-option-swatches-radio .wqpo-admin-ousedescription, .wqpo-admin-option-color-radio .wqpo-admin-ousedescription, .wqpo-admin-option-number .wqpo-admin-ousedescription, .wqpo-admin-option-text .wqpo-admin-ousedescription, .wqpo-admin-option-textarea .wqpo-admin-ousedescription {
+    display: none;
+}
+
+.wqpo-admin-option-radio .wqpo-admin-oselectfirst, .wqpo-admin-option-swatches-radio .wqpo-admin-oselectfirst, .wqpo-admin-option-color-radio .wqpo-admin-oselectfirst {
+    display: flex;
+}
+
+.wqpo-admin-option-radio .wqpo-admin-oshowinput, .wqpo-admin-option-swatches-radio .wqpo-admin-oshowinput, .wqpo-admin-option-swatches-checkbox .wqpo-admin-oshowinput {
+    display: flex;
+}
+
+.wqpo-admin-option-text .wqpo-admin-opriceperchar, .wqpo-admin-option-text .wqpo-admin-omaxlength, .wqpo-admin-option-textarea .wqpo-admin-omaxlength  {
+    display: flex;
+}
+
+.wqpo-admin-option-number .wqpo-admin-oflatrate {
+    display: flex;
+}
+
+.wqpo-admin-option-color-radio .wqpo-admin-oshowtext {
+    display: flex;
+}
+
+.wqpo-admin-option-radio:has(.wqpo-admin-ousedescription input:checked) .wqpo-admin-crowdesc, .wqpo-admin-option-dropdown:has(.wqpo-admin-ousedescription input:checked) .wqpo-admin-crowdesc, .wqpo-admin-option-checkbox:has(.wqpo-admin-ousedescription input:checked) .wqpo-admin-crowdesc {
+    display: flex !important;
+}
+
+.wqpo-admin-tab-content:has(.wqpo-admin-sshowsettings input:checked) .wqpo-admin-settings {
+    display: flex !important;
+}
+
+.wqpo-admin-option-number .wqpo-admin-crowdesc, .wqpo-admin-option-text .wqpo-admin-crowdesc, .wqpo-admin-option-textarea .wqpo-admin-crowdesc {
+    display: none !important;
+}
+
+.wqpo-admin-option-color-radio .wqpo-admin-colorinputs {
+    display: flex !important;
+}
+
+.wqpo-admin-colorinputs .wqpo-admin-field {
+    width: 80px;
+}
+
+#wqpo_admin_add_modifier {
+    margin-left: 7px;
+    display: none;
+}
+
+.wqpo-admin-tab-content:has(.wqpo-admin-sshowsettings input:checked) #wqpo_admin_add_modifier {
+    display: block;
+}
+
+#wqpo_admin_modifiers_group {
+    margin: 30px 0;
+}
+
+.wqpo-admin-mremove {
+    display: flex;
+    margin-left: auto;
+}
+
+.wqpo-admin-mremove button {
+    position: relative;
+    margin: auto;
+    top: 2px;
+}
+
+.wqpo-admin-modifier-adjustment .wqpo-admin-mmultiplier, .wqpo-admin-modifier-multiplier .wqpo-admin-madjustment {
+    display: none;
+}
+
+.wqpo-admin-mtype {
+    width: 150px;
+}
+
+.wqpo-admin-cenablemodifiers {
+    width: 120px;
+    border-right: #BBB solid 1px;
+    padding-right: 11px;
+}
+
+@media only screen and (max-width: 1800px) { 
+    .wqpo-admin-option-color-radio .wqpo-admin-crowmain {
+        flex-wrap: wrap;
+    }
+
+    .wqpo-admin-option-color-radio .wqpo-admin-cname {
+        margin: 0 0 8px 0;
+    }
+
+    .wqpo-admin-option-inner {
+        flex-wrap: wrap;
+    }
+}
+
+
+@media only screen and (max-width: 1750px) { 
+    .wqpo-admin-option-color-radio .wqpo-admin-choiceinputs {
+        margin-top: 8px !important;
+    }
+
+    .wqpo-admin-option-color-radio .wqpo-admin-csku {
+        border-left: unset;
+        padding-left: unset;
+    }
+}
+
+@media only screen and (max-width: 1650px) { 
+    .wqpo-admin-option-radio .wqpo-admin-crowmain, .wqpo-admin-option-dropdown .wqpo-admin-crowmain, .wqpo-admin-option-checkbox .wqpo-admin-crowmain, .wqpo-admin-option-swatches-radio .wqpo-admin-crowmain, .wqpo-admin-option-swatches-checkbox .wqpo-admin-crowmain {
+        flex-wrap: wrap;
+    }
+
+    .wqpo-admin-option-radio .wqpo-admin-sharedinputs, .wqpo-admin-option-dropdown .wqpo-admin-sharedinputs, .wqpo-admin-option-checkbox .wqpo-admin-sharedinputs, .wqpo-admin-option-swatches-radio .wqpo-admin-sharedinputs, .wqpo-admin-option-swatches-checkbox .wqpo-admin-sharedinputs, .wqpo-admin-option-radio .wqpo-admin-choiceinputs, .wqpo-admin-option-dropdown .wqpo-admin-choiceinputs, .wqpo-admin-option-checkbox .wqpo-admin-choiceinputs, .wqpo-admin-option-swatches-radio .wqpo-admin-choiceinputs, .wqpo-admin-option-swatches-checkbox .wqpo-admin-choiceinputs {
+        margin: 8px 0 0 0 !important;
+    }
+
+    .wqpo-admin-csku {
+        border-left: unset;
+        padding-left: unset;
+    }
+
+    .wqpo-admin-cname {
+        margin-right: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+
+    .wqpo-admin-field label {
+        display: block !important;
+    }
+
+    .wqpo-admin-colorinputs {
+        margin-top: 8px !important;
+        padding-left: 0;
+        padding-right: 0;
+        border-left: unset;
+        width: 100%;
+    }
+
+    .wqpo-admin-colorinputs .wqpo-admin-field, .wqpo-admin-choiceinputs .wqpo-admin-field {
+        width: 100%;
+    }
+
+    .wqpo-admin-choiceinputs, .wqpo-admin-sharedinputs {
+        width: 100%;
+    }
+
+    .wqpo-admin-choiceinputs .wqpo-admin-field:last-of-type {
+        padding-right: 0;
+        border-right: 0;
+        margin-right: 0;
+    }
+
+    .wqpo-admin-crowmain .wqpo-admin-field {
+        width: 100%;
+    }
+
+    .wqpo-admin-cremove {
+        margin: 26px auto 0 auto !important;
+    }
+
+    .wqpo-admin-cremove button {
+        margin: 0;
+    }
+
+    .wqpo-admin-option-inner .wqpo-admin-field {
+        margin: 8px 0 0 0;
+    }
+
+    .wqpo-admin-oname {
+        margin: 0;
+    }
+
+    .wqpo-admin-settings {
+        flex-wrap: wrap;
+    }
+
+    .wqpo-admin-settings .wqpo-admin-field {
+        margin-bottom: 10px;
+    }
+
+    .wqpo-admin-field:has(input[type='checkbox']) label {
+        top: 0;
+    }
+
+    .wqpo-admin-choiceinputs {
+        flex-wrap: wrap;
+    }
+
+    .wqpo-admin-onumber span {
+        position: relative !important;
+        top: 5px !important;
+        right: 4px;
+        font-size: 14px;
+    }
+
+    .wqpo-admin-choiceinputs .wqpo-admin-field {
+        margin: 7px 0 0 0;
+    }
+
+}
